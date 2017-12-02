@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello, Docker + PostgreSQL + Nginx + JBoss + SPA</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ headerContent }}</h1>
+      <div>
+        <button type="button" @click="counter++">+</button>
+        <span>{{counter}}</span>
+        <button type="button" @click="counter--">-</button>
+      </div>
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          headerContent: 'Hello, Docker + Nginx + JBoss + SPA',
+          counter: 0
+        }
+      })
+    </script>
+  </body>
+</html>

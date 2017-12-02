@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  web:
+    image: 'nginx'
+    volumes:
+      - ./nginx/html:/usr/share/nginx/html:ro
+      # - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    command: [nginx-debug, '-g', 'daemon off;']
+  db:
+    image: 'postgres'
+    # restart: 'always'
+    environment:
+      POSTGRES_USER: 'fullstack'
+      POSTGRES_PASSWORD: 'PGfullstack@123' # TODO Usar POSTGRES_PASSWORD_FILE para mais segurança
+      POSTGRES_DB: 'fullstack_dev'         #      Ou um env_vars
+    ports:
+      - 54321:5432

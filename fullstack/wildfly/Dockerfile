@@ -45,8 +45,9 @@ ENV LAUNCH_JBOSS_IN_BACKGROUND true
 
 # Expose the ports we're interested in
 # - 8080 (default port for the web server)
+# - 8443 (default port for HTTPS listener)
 # - 9990 (default port for the admin console)
-EXPOSE 8080 9990
+EXPOSE 8080 8443 9990
 
 # Adding admin user for web console
 RUN /opt/jboss/wildfly/bin/add-user.sh admin JBOSSfullstack@123 --silent

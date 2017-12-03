@@ -25,3 +25,4 @@ services:
     ports:
       - 8888:8080 #web server
       - 8890:9990 #admin console
+      - 8443:8443 #HTTPS listener

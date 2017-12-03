@@ -2,7 +2,7 @@ version: '3'
 
 services:
   web:
-    image: 'nginx'
+    image: 'nginx' # TODO pick a version to avoid silent upgrade issues
     volumes:
       - ./nginx/html:/usr/share/nginx/html:ro
       # - ./nginx.conf:/etc/nginx/nginx.conf:ro
@@ -10,7 +10,7 @@ services:
       - 8080:80
     command: [nginx-debug, '-g', 'daemon off;']
   db:
-    image: 'postgres'
+    image: 'postgres' # TODO pick a version to avoid silent upgrade issues
     # restart: 'always'
     environment:
       POSTGRES_USER: 'fullstack'
@@ -18,3 +18,10 @@ services:
       POSTGRES_DB: 'fullstack_dev'         #      Ou um env_vars
     ports:
       - 54321:5432
+  wildfly:
+    image: fullstack_wildfly:0.1.0
+    build:
+      context: ./wildfly
+    ports:
+      - 8888:8080 #web server
+      - 8890:9990 #admin console

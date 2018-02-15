@@ -24,7 +24,7 @@ informações a cerca de suas configurações, etc.
 
 Para subir todos os serviços, execute:
 ```bash
-sudo docker-compose up
+docker-compose up
 ```
 
 Flags opcionais:
@@ -35,7 +35,7 @@ Flags opcionais:
 
 Para parar todos os serviços, execute:
 ```bash
-sudo docker-compose down
+docker-compose down
 ```
 
 Flags opcionais:
